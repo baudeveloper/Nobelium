@@ -1,0 +1,118 @@
+/***************************************
+    About Page Styles
+****************************************/
+.content {
+	&#company,
+	&#mission {
+		@include clearfix;
+		article {
+			@include make-md-column(12);
+		}
+	}
+}
+#management {
+	background-color:$gray-darker;
+	background: url(../img/dark_geometric.png);
+	background-attachment:fixed;
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (   min--moz-device-pixel-ratio: 2),
+	only screen and (     -o-min-device-pixel-ratio: 2/1),
+	only screen and (        min-device-pixel-ratio: 2),
+	only screen and (                min-resolution: 192dpi),
+	only screen and (                min-resolution: 2dppx) { 
+		background: url(../img/dark_geometric_@2X.png);
+	}
+	padding: 60px 0 30px 0;
+	h2 {
+		margin-bottom: 30px;
+	}
+	&.content {
+		article {
+			@include make-md-column(10);
+		}
+	}
+	.media {
+		display: flex;
+		align-items:center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin-bottom: 30px;
+		padding-bottom:30px;
+		//border-bottom: 1px solid $gray;
+		@media (max-width: $screen-sm-max) {
+			align-items: flex-start;
+		}
+		.media-left {
+			width: 25%;
+			img {
+				border-radius: 100%;
+				@include img-responsive;
+			}
+			@media (max-width: $screen-sm-max) {
+				width: 100%;
+				margin-bottom: 30px;
+				text-align: center;
+				img {
+					display: inline-block;
+				}
+			}
+			
+		}
+		.media-body {
+			width:70%;
+			color: white;
+			@media (max-width: $screen-sm-max) {
+				width: 100%;
+			}
+			h3 {
+				margin-top: 0;
+				color:mix($brand-purple-gray,white,40%);
+				span {
+					font-weight: 300;
+				}
+			}
+			p {
+				color: mix($brand-purple-gray,white,40%);
+			}
+		}
+	}
+}
+
+#conntected_dots {
+	background:url(../img/connected_dots_bg.jpg) no-repeat center bottom;
+}
+
+#acquisition {
+	padding:60px 0;
+	&.content {
+		article {
+			@include make-md-column(6);
+			@include make-md-column-offset(3);
+			.btn {
+				font-size: 2rem;
+				text-transform: uppercase;
+				font-family: $font-family-condensed;
+				letter-spacing: 1px;
+				background-color: rgba(255,255,255,0.65);
+				img {
+					width: 100px;
+				}
+				&:hover {
+					background-color: mix($brand-secondary,white,20%);
+					color: $brand-secondary;
+				}
+				@media (max-width: $screen-xs-max) {
+					img {
+						clear: both;
+						width: 40px;
+					}
+					span {
+						display: block;
+						margin-top: 10px;
+					}
+				}
+			}
+		}
+	}
+}

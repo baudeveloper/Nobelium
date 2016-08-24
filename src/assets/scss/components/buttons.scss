@@ -1,0 +1,152 @@
+//Add extra button styles
+.btn-secondary {
+  @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+}
+
+// 3D Buttons
+@mixin button-variant-threed($shadow) {
+  box-shadow: 0 6px $shadow;
+  transition: all 100ms!important;
+  position: relative;
+  &:hover,
+  &:focus {
+    box-shadow: 0 4px $shadow;
+    top: 2px;
+    outline: none;
+  }
+  &:active,
+  &.active {
+    box-shadow: 0 0 $shadow;
+    top: 6px;
+  }
+
+}
+
+.btn.threed {
+  &.btn-default {
+    @include button-variant-threed($gray-light);
+    background-color: lighten($gray-lighter,5%);
+  }
+  &.btn-primary {
+    @include button-variant-threed(darken($brand-primary,20%));
+  }
+  &.btn-secondary {
+    @include button-variant-threed(darken($brand-secondary,20%));
+  }
+  // Info appears as blue-green
+  &.btn-info {
+    @include button-variant-threed(darken($brand-info,20%));
+  }
+  // Success appears as green
+  &.btn-success {
+    @include button-variant-threed(darken($brand-success,20%));
+  }
+  // Warning appears as orange
+  &.btn-warning {
+    @include button-variant-threed(darken($brand-warning,20%));
+  }
+  // Danger and error appear as red
+  &.btn-danger {
+    @include button-variant-threed(darken($brand-danger,20%));
+  }
+}
+
+
+
+// Out line Buttons
+@mixin button-variant-outline($color, $background, $border) {
+  background: none;
+  border: 1px solid $border;
+  color: $color;
+  line-height: 1.15;
+  white-space: normal;
+  overflow: hidden;
+  transition: border-color 0.3s, background-color 0.3s;
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  position: relative;
+  z-index: 1;
+  &::before {
+    font-family: FontAwesome;
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    left: 10px;
+    color: $color;
+  }
+  &:hover,
+  &:focus {
+    color: mix($color,white,10%);
+    background-color: $background;
+    outline: none;
+    &::before {
+      color: mix($color,white,10%);
+    }
+  }
+  &:active,
+  &.active {
+    box-shadow: none;
+  }
+  &.btn-lg {
+    border: 1px solid $border;
+  }
+}
+
+.btn.outline {
+  &.btn-default {
+    @include button-variant-outline($gray, darken($gray-light,20%), darken($gray-light,20%));
+  }
+  &.btn-primary {
+    @include button-variant-outline($brand-primary, $btn-primary-bg, $btn-primary-border);
+  }
+  &.btn-secondary {
+    @include button-variant-outline($brand-secondary, $brand-secondary, $brand-secondary);
+  }
+  // White button when on dark colored background
+  &.btn-white {
+    @include button-variant-outline(white, white, white);
+    &:hover,
+    &:focus {
+      background-color:transparent;
+      border-color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.5);
+    }
+  }
+  // Info appears as blue-green
+  &.btn-info {
+    @include button-variant-outline(darken($brand-info,20%), darken($brand-info,20%), darken($brand-info,20%));
+    padding-left:30px;
+    padding-right:30px;
+    &::before {
+      content: "\f05a";
+    }
+  }
+  // Success appears as green
+  &.btn-success {
+    @include button-variant-outline($btn-success-bg, $btn-success-bg, $btn-success-bg);
+    padding-left:30px;
+    padding-right:30px;
+    &::before {
+      content: "\f00c";
+    }
+  }
+  // Warning appears as orange
+  &.btn-warning {
+    @include button-variant-outline($btn-warning-bg, $btn-warning-bg, $btn-warning-bg);
+    padding-left:30px;
+    padding-right:30px;
+    &::before {
+      content: "\f071";
+    }
+  }
+  // Danger and error appear as red
+  &.btn-danger {
+    @include button-variant-outline($btn-danger-bg, $btn-danger-bg, $btn-danger-bg);
+    padding-left:30px;
+    padding-right:30px;
+    &::before {
+      content: "\f06a";
+    }
+  }
+}

@@ -1,0 +1,130 @@
+// Source : Retina Display Media Query
+// https://css-tricks.com/snippets/css/retina-display-media-query/
+
+html{
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    // -moz-osx-font-smoothing: grayscale;
+    // -webkit-font-smoothing: antialiased;
+    // text-size-adjust: auto;
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  &.fancy {
+    font-family: $font-family-serif;
+  }
+  &.thin {
+    font-weight: 300;
+  }
+  &.thinner {
+    font-weight: 200;
+  }
+  &.caps {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+/* Custom Unordered Lists */
+ul {
+  &.cl {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 3.5rem;
+    text-indent: -1rem!important;
+    > li::before {
+      display: inline-block;
+      margin-right: 5px;
+      font-family: 'FontAwesome';
+      color: $brand-primary;
+    }
+    &.check {
+      > li::before {
+        content: "\f00c";
+      }
+    }
+    &.wrong {
+      > li::before {
+        content: "\f00d";
+      }
+    }
+    &.arrow {
+      > li::before {
+        content: "\f105";
+      }
+    }
+    &.aqua{
+      > li::before {
+        color: $brand-secondary;
+      }
+    }
+    &.green{
+      > li::before {
+        color: $brand-success;
+      }
+    }
+    &.red{
+      > li::before {
+        color: $brand-danger;
+      }
+    }
+    ul {
+        padding-left:2rem;
+        text-indent: 0rem;
+    }
+  }
+}
+
+/* the company name wrap */
+.thename {
+  display: inline-block;
+  position: relative;
+  font-family: $font-family-sans-serif;
+  font-style: italic;
+}
+
+
+/* Quotes */
+blockquote {
+  p {
+    font-family: $font-family-serif;
+    font-style: italic;
+  }
+}
+
+#main-content {
+  h1,h2 {
+    font-weight: 300;
+  }
+  h3,h4,h5,h6 {
+    //color:$text-color;
+  }
+  h3 {
+    //font-weight: 300;
+  }
+  h4 {
+    //text-transform: uppercase;
+    //letter-spacing: 1px;
+  }
+  .content {
+    article {
+      h2 {
+        color: $brand-secondary;
+      }
+      >p:first-of-type {
+        font-size: 1.75rem;
+      }
+      .well {
+        h4 {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+/***************************************
+    Acquisition Criteria Page Styles
+****************************************/
+.content {
+	&#acquisition-body {
+		article {
+			@include make-sm-column(8);
+			@include make-md-column(7);
+			margin-bottom: 30px;
+		}
+		aside {
+			@include make-sm-column(4);
+			@include make-md-column-offset(1);
+			#ticker.widget article {
+				margin: 0;
+				width: 100%;
+				float: none;
+				clear: both;
+				display: block;
+				padding: 15px 0;
+			}
+		}
+	}
+}
+.we-like {
+	display: flex;
+	flex-wrap:wrap;
+	justify-content: space-between;
+	.well {
+		width: 48%;
+		@media (max-width: $screen-sm-max) {
+			width: 100%;
+		}
+	}
+}

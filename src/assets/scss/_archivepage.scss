@@ -1,0 +1,127 @@
+/***************************************
+    Archive Page Styles
+****************************************/
+
+#news-listing {
+	&.content {
+		article {
+			@include make-sm-column(12);
+		}
+	}
+	ul {
+		margin:0;
+		padding:0;
+		list-style: none;
+		li {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items:flex-start;
+			margin-bottom: 30px;
+			padding-bottom:30px;
+			border-bottom:1px solid lighten($gray-light,35%);
+			.meta {
+				width: 30%;
+				color: $gray-light;
+				small {
+					text-transform: uppercase;
+					letter-spacing: 1px;
+				}
+				span {
+					display: block;
+					font-family: $font-family-condensed;
+					font-size:2.85rem;
+					font-weight: 300;
+					line-height: 1;
+				}
+				@media (max-width: $screen-xs-max) {
+					width: 100%;
+					margin-bottom: 15px;
+					span {
+						font-size: 2rem;
+					}
+				}
+			}
+			.entry-content {
+				width: 70%;
+				@media (max-width: $screen-xs-max) {
+					width: 100%;
+				}
+				h2 {
+					margin-top:0;
+					a {
+						color: $brand-secondary;
+					}
+				}
+				@media (max-width: $screen-xs-max) {
+					.btn {
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.single-posting {
+	@include make-sm-column(12);
+	> article {
+		@include make-sm-column(8);
+		@include make-md-column(7);
+		margin-bottom: 30px;
+		h2 {
+			margin-top: 0;
+			color: $brand-secondary;
+		}
+		.back-to-news {
+			margin-top: -0.5em;
+			margin-bottom: 1.25em;
+		}
+	}
+	aside {
+		@include make-xs-column(12);
+		@include make-sm-column(4);
+		@include make-md-column-offset(1);
+	}
+	.post-navigation {
+		.nav-previous {
+			&:before {
+				color: $brand-aqua;
+				font-family: "fontawesome";
+				content: "\f177";
+				padding-right: .375em;
+			}
+		}
+		.nav-next {
+			&:before {
+				color: $brand-aqua;
+				font-family: "fontawesome";
+				content: "\f178";
+				padding-right: .375em;
+			}
+		}
+	}
+}
+
+.nav-links {
+	margin-top: 15px;
+	.nav-previous,
+	.nav-next {
+		display: inline-block;
+	}
+}
+
+.post-navigation,
+.posts-navigation {
+	h2 {
+		display: none;
+	}
+}
+
+.posts-navigation {
+	.nav-links {
+		.nav-next {
+			margin-left: .5em;
+		}
+	}
+}

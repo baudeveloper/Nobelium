@@ -1,0 +1,109 @@
+/***************************************
+    Archive Page Styles
+****************************************/
+
+#contact-us {	
+	// Overrides
+	.gform_wrapper {
+		input[type="email"], 
+		input[type="number"], 
+		input[type="password"], 
+		input[type="tel"], 
+		input[type="text"], 
+		input[type="url"],
+		textarea {
+			text-indent: 0;
+		}
+		.top_label .gfield_label {
+			margin-bottom: 0;
+		}
+	}
+	// Overrides
+	&.content {
+		article {
+			@include make-sm-column(5);
+			margin-bottom: 60px;
+			p {
+				font-size: 1.75rem;
+				a {
+					color: $brand-secondary;
+				}
+			}
+		}
+		aside {
+			@include make-sm-column(7);
+			@media (max-width: $screen-xs-max) {
+				padding: 30px;
+				background-color: mix($brand-secondary,white,8%);
+			}
+			h2 {
+				color: $brand-secondary;
+			}
+			form {
+				fieldset {
+					@include make-row;
+					.form-group {
+						@include make-sm-column(12);
+						label, .gfield_label  {
+							margin: 0 0 5px 0 !important;
+							font-weight: 900 !important;
+							.required, .gfield_required {
+								color: $brand-danger !important;
+								margin-left: 0 !important;
+							}
+						}
+					}
+					// For Gravity Forms only.
+					li.gfield {						
+						@extend .form-group;
+						@include make-sm-column(12);
+					}
+					.ginput_container {				
+						margin: 0 !important;
+						input, textarea {			
+							@extend .form-control;
+						}
+					}
+				}				
+				.submit-btn {
+					@include make-xs-column(6);
+					input {
+				 		@extend .btn, .btn-secondary, .btn-block;
+				 	}
+				}
+				.reset-btn {
+					@include make-xs-column(6);
+					input {
+				 		@extend .btn, .btn-default, .btn-block, .outline;
+				 	}
+				}
+				.note {
+					margin-top: 20px;
+					@include make-xs-column(12);
+					.required {
+						color: $brand-danger;
+					}
+				}				
+				.gform_footer {
+					margin-top: 0 !important;
+					padding-top: 0 !important;
+				}
+			}
+		}
+	}
+}
+
+#page-standard {
+	&.content {
+		article {
+			@include make-sm-column(12);
+			margin-bottom: 60px;
+			p {
+				font-size: 1.75rem;
+				a {
+					color: $brand-secondary;
+				}
+			}
+		}
+	}
+}

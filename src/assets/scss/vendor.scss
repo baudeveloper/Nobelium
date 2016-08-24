@@ -1,0 +1,22 @@
+/***************************************
+Vendor Styles
+	=== UI Styling with Bootstrap overrides
+****************************************/
+
+// Font Awesome
+@import "bower_components/font-awesome/scss/font-awesome";
+
+// Bootstrap-Select 1.9.3
+@import "bower_components/bootstrap-select/sass/bootstrap-select";
+
+// Bootstrap-Toggle 2.2.1
+@import "bower_components/bootstrap-toggle/css/bootstrap-toggle";
+
+//Animation
+@import 'components/animation';
+
+//Parallax
+@import 'components/parallax';
+
+//GravityForms
+@import 'components/gravityforms';

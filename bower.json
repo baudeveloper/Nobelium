@@ -1,0 +1,28 @@
+{
+  "name": "baustein-starter-framework",
+  "version": "1.0.0",
+  "authors": [
+    "Baustein Design Inc."
+  ],
+  "description": "Website for CompanName",
+  "main": "gulpfile.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.6",
+    "font-awesome": "fontawesome#~4.5.0",
+    "bootstrap-select": "~1.9.3",
+    "bootstrap-toggle": "~2.2.1",
+    "fastclick":"~1.0.6",
+    "what-input": "~1.1.2",
+    "jquery-validation": "~1.14.0",
+    "bootstrap-hover-dropdown":"~2.2.1"
+  },
+  "private": true
+}

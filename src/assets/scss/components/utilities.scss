@@ -1,0 +1,188 @@
+// Shadow Seperator
+// Helpful: http://codepen.io/jkneb/pen/qgpJF
+.shadow-sep {
+  position: relative;
+  height: 30px;
+  width: 60%;
+  border: 1px solid #fff;
+  margin: 0px auto 30px auto;
+    &:before {
+      position: absolute;
+      content: '';
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background-color: rgba(155,155,0, 0.25);
+      border-radius:30%;
+      box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.3);
+      clip: rect(30px, auto, 70px, 0);
+    }
+}
+
+//Affix Issue Resolved
+.affix-bottom { position:absolute; }
+
+//Selection Highlight
+::-moz-selection { background: $brand-secondary; color:white;}
+::selection { background: $brand-secondary;  color:white;}
+
+//Alpha Color Mixin
+// Source: http://thesassway.com/intermediate/mixins-for-semi-transparent-colors
+@mixin alpha-attribute($attribute, $color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  #{$attribute}: $solid-color;
+  #{$attribute}: $color;
+}
+
+
+//Listing
+.listing {
+  @extend .list-group;
+  margin-bottom: 0;
+  a {
+    @extend .list-group-item;
+    padding-right: 100px;
+    @media (max-width: $screen-xs-max) {
+      padding:15px!important;
+    }
+    h3 {
+      @extend .list-group-item-heading;
+      font-size: $font-size-h4;
+      font-weight: 400!important;
+    }
+    p {
+      @extend .list-group-item-text;
+      text-align:left;
+    }
+    &:after {
+        position: absolute;
+        top:20%;
+        right: 30px;
+        font-family: Fontawesome;
+        content: '\f105';
+        color: $gray-lighter;
+        font-size: $font-size-h1;
+        transition: opacity 0.3s, transform 0.3s, color 0.3s;
+        opacity: 0;
+    }
+    &:hover {
+       h3 {
+          color: $brand-primary!important;
+        }
+        &:after {
+          opacity: 1;
+          color: $brand-primary;
+          transform: translateX(15px);
+        }
+    }
+  }
+}
+
+/***
+Source: http://bootsnipp.com/snippets/featured/bootstrap-line-tabs-by-keenthemes
+Bootstrap Line Tabs by @keenthemes
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+Licensed under MIT
+***/
+
+/* Tabs panel */
+.tabbable-panel {
+  border:0;
+  padding: 15px;
+}
+
+/* Default mode */
+.tabbable-line {
+  > .nav-tabs {
+    border: none;
+    margin: 0px;
+    > li {
+      margin-right: 2px;
+      border-bottom: 4px solid white;
+      > a {
+        outline: none;
+        border: 0;
+        margin-right: 0;
+        color: $gray-light;
+        font-size: $font-size-large;
+        @media (max-width: $screen-sm-max) {
+          font-size: $font-size-base;
+        }
+      }
+      &.open,
+      &:hover {
+        border-bottom: 4px solid $brand-secondary;
+        outline: none;
+        > a {
+          border: 0;
+          background: none !important;
+          color: $brand-secondary;
+          outline: none;
+        }
+        .dropdown-menu {
+          margin-top: 0px;
+        }
+      }
+      &.active {
+        border-bottom: 4px solid $brand-secondary;
+        position: relative;
+        > a {
+          outline: none;
+          border: 0;
+          color: $brand-secondary;
+        }
+        &:hover {
+          outline: none;
+          a {
+            border:0;
+          }
+        }
+      }
+    }
+  }
+  .tab-content {
+    background-color: #fff;
+    border: 0;
+    border-top: 1px solid $gray-lighter;
+    padding: 15px 0;
+  }
+  /* Below tabs mode */
+  &.tabs-below {
+    > .nav-tabs {
+      > li {
+        border-top: 4px solid transparent;
+        > a {
+          margin-top: 0;
+        }
+        &:hover {
+          border-bottom: 0;
+          border-top: 4px solid #fbcdcf;
+        }
+        &.active {
+          margin-bottom: -2px;
+          border-bottom: 0;
+          border-top: 4px solid #f3565d;
+        }
+      }
+    }
+    > .tab-content {
+      margin-top: -10px;
+      border-top: 0;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+    }
+  }
+}
+
+.portlet .tabbable-line > .tab-content {
+  padding-bottom: 0;
+}
+
+
+//Default Well Background
+.well {
+  background-color:mix($brand-aqua-gray,white,8%);
+}

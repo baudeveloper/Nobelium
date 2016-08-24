@@ -1,0 +1,161 @@
+/***************************************
+    Banner Styles
+****************************************/
+#main-banner,
+#page-banner {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color:black;
+  width: 100%;
+  z-index: 100;
+  .carousel-control .icon-prev,
+  .carousel-control .icon-next {
+    top: 55%;
+  }
+  .carousel-indicators {
+    li {
+      width: 14px;
+      height: 14px;
+      margin: 2.5px;
+      border-radius: 50%;
+      border-color: white;
+    }
+    .active {
+      border-color: $brand-aqua;
+      background-color: $brand-aqua;
+    }
+    @media (min-width: $screen-md-min) {
+      bottom: 85px;
+    }
+    @media (min-width: $screen-xs-max) and (max-width: $screen-md-min) {
+      bottom: 150px;
+    }
+    @media (min-width: 0) and (max-width: $screen-xs-max) {
+      top: 80px;
+    }
+  }
+  .carousel-inner {
+    height: 100%;
+    .item {
+      min-height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 100%;
+    }
+  }
+  .tagline {
+    padding-top: 310px;
+    @media (max-width: $screen-sm-max) {
+      padding-top:230px;
+    }
+     @media (max-width: $screen-xs-max) {
+      position: absolute;
+      bottom:0;
+      width: 100%;
+     }
+   .tagline-content {
+      @include make-md-column(8);
+      @include make-md-column-offset(2);
+      text-align: center;
+      @media (max-width: $screen-md-max) {
+        @include make-sm-column(10);
+        @include make-sm-column-offset(1);
+      }
+    }
+    h1 {
+      font-family: $font-family-condensed;
+      color: white;
+      font-weight:700;
+      text-transform:uppercase;
+      margin:0;
+      font-size: 8rem;
+      // line-height: 1.25;
+      line-height: 0.95;
+      @media (max-width: $screen-sm-max) {
+        font-size: 6rem;
+      }
+      @media (max-width: $screen-xs-max) {
+        font-size: 4rem;
+        span {
+          display: inline-block;
+        }
+      }
+    }
+    h2 {
+      font-family: $font-family-condensed;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: mix($brand-primary,white,20%);
+      line-height: 1.25;
+      strong {
+        font-weight: 400;
+      }
+       @media (max-width: $screen-sm-max) {
+        font-size: 2rem;
+       }
+    }
+    hr {
+      margin:15px 0 0 0;
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+    }
+  }
+  .tagline.double {
+    @media (min-width: $screen-sm-max) {
+      padding-top: 232.5px;
+    }
+  }
+}
+
+#main-banner {
+  @media (min-width: $screen-sm-max) {
+    height: 720px!important;
+  }
+}
+
+#page-banner {
+	height:250px;
+  	@media (max-width: $screen-xs-max) {
+		height: 120px;
+  	}
+  	&.short {
+  		height:330px;
+  		@media (max-width: $screen-xs-max) {
+  			height: 90px;
+  		}
+  	}
+}
+
+// Bootstrap Carousel - Fade Effect.
+// Resource: https://codepen.io/Rowno/pen/Afykb
+.carousel-fade {
+  .carousel-inner {
+    .item {
+      transition-property: opacity;
+    }        
+    .item,
+    .active.left,
+    .active.right {
+      opacity: 0;
+    }
+    .active,
+    .next.left,
+    .prev.right {
+      opacity: 1;
+    }
+    .next,
+    .prev,
+    .active.left,
+    .active.right {
+      left: 0;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .carousel-control {
+    z-index: 2;
+  }
+}

@@ -1,0 +1,56 @@
+/***************************************
+    Index Page Styles
+****************************************/
+.featured-cards {
+	position: relative;
+	padding: 60px 0;
+	z-index:200;
+	> .container {
+		position: relative;
+		background-color: white;
+		margin-top: -150px;
+		padding: 30px;
+		 @media (max-width: $screen-xs-max) {
+			margin-top: 0;
+		 }
+		.well {
+			text-align: center;
+			@media (min-width:$screen-md) and (max-width: $screen-md-max) {
+				min-height: 315px;
+			}
+			@media (min-width:$screen-sm) and (max-width: $screen-sm-max) {
+				min-height: 334px;
+			}
+			img {
+				width: 60px;
+				height: 60px;
+				margin-bottom: 20px;
+			}
+			h2 {
+				font-family: $font-family-condensed;
+				text-transform: uppercase;
+				color: $brand-secondary;
+				font-weight: 300;
+				margin-bottom: 20px;
+				margin-top: 0;
+			}
+			p {
+				margin-bottom: 20px;
+			}
+			.btn {
+				padding-left:30px;
+				padding-right:30px;
+				text-transform: uppercase;
+				font-size: $font-size-small;
+				color: mix($brand-secondary,white,20%);
+				i {
+					font-size: $font-size-small;
+				}
+			}
+		}
+	}
+	@media (max-width: $screen-sm-max) {
+		padding: 0 0 30px 0;
+	};
+
+}

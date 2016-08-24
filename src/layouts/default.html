@@ -1,0 +1,46 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Nobelium Tech Corp. {{title}}</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/icons/apple-touch-icon-57x57.png?v=kPRybMdXj8">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/icons/apple-touch-icon-60x60.png?v=kPRybMdXj8">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/icons/apple-touch-icon-72x72.png?v=kPRybMdXj8">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/icons/apple-touch-icon-76x76.png?v=kPRybMdXj8">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/icons/apple-touch-icon-114x114.png?v=kPRybMdXj8">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/icons/apple-touch-icon-120x120.png?v=kPRybMdXj8">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/icons/apple-touch-icon-144x144.png?v=kPRybMdXj8">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/icons/apple-touch-icon-152x152.png?v=kPRybMdXj8">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icons/apple-touch-icon-180x180.png?v=kPRybMdXj8">
+    <link rel="icon" type="image/png" href="assets/img/icons/favicon-32x32.png?v=kPRybMdXj8" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/img/icons/android-chrome-192x192.png?v=kPRybMdXj8" sizes="192x192">
+    <link rel="icon" type="image/png" href="assets/img/icons/favicon-96x96.png?v=kPRybMdXj8" sizes="96x96">
+    <link rel="icon" type="image/png" href="assets/img/icons/favicon-16x16.png?v=kPRybMdXj8" sizes="16x16">
+    <link rel="manifest" href="assets/img/icons/manifest.json?v=kPRybMdXj8">
+    <link rel="mask-icon" href="assets/img/icons/safari-pinned-tab.svg?v=kPRybMdXj8" color="#43BCCD">
+    <link rel="shortcut icon" href="assets/img/icons/favicon.ico?v=kPRybMdXj8">
+    <meta name="apple-mobile-web-app-title" content="Site Title">
+    <meta name="application-name" content="Site Title">
+    <meta name="msapplication-TileColor" content="#43BCCD">
+    <meta name="msapplication-TileImage" content="assets/img/icons/mstile-144x144.png?v=kPRybMdXj8">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="{{root}}assets/css/app.css">
+    <script src="{{root}}assets/js/pf.intrinsic.min.js" async></script>
+    <script src="{{root}}assets/js/picturefill.min.js" async></script>
+    <script src="{{root}}assets/js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+  </head>
+  <body class="{{class}}">
+  <a class="back-to-top smooth" href="#top"><i class="fa fa-chevron-up" aria-hidden="true"></i><span class="sr-only">Back to Top</span></a>
+  <section name="top" id="page-wrapper" class="clearfix">
+
+        {{#unlesspage 'styleguide'}}
+            {{> navigation}}
+        {{/unlesspage}}
+
+        {{> body}}
+
+        {{#unlesspage 'styleguide'}}
+            {{> footer}}
+        {{/unlesspage}}
