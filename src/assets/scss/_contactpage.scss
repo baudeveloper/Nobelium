@@ -2,14 +2,14 @@
     Archive Page Styles
 ****************************************/
 
-#contact-us {	
+#contact-us {
 	// Overrides
 	.gform_wrapper {
-		input[type="email"], 
-		input[type="number"], 
-		input[type="password"], 
-		input[type="tel"], 
-		input[type="text"], 
+		input[type="email"],
+		input[type="number"],
+		input[type="password"],
+		input[type="tel"],
+		input[type="text"],
 		input[type="url"],
 		textarea {
 			text-indent: 0;
@@ -54,17 +54,17 @@
 						}
 					}
 					// For Gravity Forms only.
-					li.gfield {						
+					li.gfield {
 						@extend .form-group;
 						@include make-sm-column(12);
 					}
-					.ginput_container {				
+					.ginput_container {
 						margin: 0 !important;
-						input, textarea {			
+						input, textarea {
 							@extend .form-control;
 						}
 					}
-				}				
+				}
 				.submit-btn {
 					@include make-xs-column(6);
 					input {
@@ -83,7 +83,7 @@
 					.required {
 						color: $brand-danger;
 					}
-				}				
+				}
 				.gform_footer {
 					margin-top: 0 !important;
 					padding-top: 0 !important;
@@ -99,7 +99,7 @@
 			@include make-sm-column(12);
 			margin-bottom: 60px;
 			p {
-				font-size: 1.75rem;
+				font-size: 1.4rem!important;
 				a {
 					color: $brand-secondary;
 				}
